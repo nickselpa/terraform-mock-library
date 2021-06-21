@@ -7,14 +7,19 @@ provider "google" {
 resource "random_uuid" "random_bucket_id" {}
 
 # TODO: add random labels for bucket creation
-resource "google_storage_bucket" "test_bucket_pool" {
-  for_each = {
-    bucket1 = "${random_uuid.random_bucket_id.result}"
-    bucket2 = "${random_uuid.random_bucket_id.result}"
-    bucket3 = "${random_uuid.random_bucket_id.result}"
-  }
+resource "google_storage_bucket" "uniform_access_control" {
+  count = var.buckets_per_config_type
 
-  name = "${each.value}-${each.key}"
+  name = "uniform-${random_uuid.random_bucket_id.result}-${count.index}"
+  force_destroy = true
+  project = var.project_id
+  uniform_bucket_level_access = true
+}
+
+resource "google_storage_bucket" "fine_grained_access_control" {
+  count = var.buckets_per_config_type
+
+  name = "finegrained-${random_uuid.random_bucket_id.result}-${count.index}"
   force_destroy = true
   project = var.project_id
 }
