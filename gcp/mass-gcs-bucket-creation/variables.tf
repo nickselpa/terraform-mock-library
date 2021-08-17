@@ -1,4 +1,4 @@
-#===== ./variables.tf
+#===== ./gcp/mass-gcs-bucket-creation/variables.tf
 variable "project_id" {
   description = "Target project ID to launch buckets"
   type = string
@@ -9,7 +9,7 @@ variable "region_id" {
   type = string
 }
 
-variable "buckets_per_config_type" {
+variable "bucket_qty" {
   description = "Quantity of buckets to launch per bucket config type for mocking"
   type = number
 }
