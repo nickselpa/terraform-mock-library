@@ -1,3 +1,5 @@
+**/gcp/kubernetes-the-hard-way/**
+
 # Local .terraform directories
 **/.terraform/*
 
