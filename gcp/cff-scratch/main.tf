@@ -28,17 +28,3 @@ module "ids_test_deploy" {
   vm_image_family    = var.vm_image_family
   mirroring_policies = var.mirroring_policies
 }
-
-# name 	description 	type 	required 	default
-# billing_account_id 	Billing account id used as default for new projects. 	string 	✓ 	
-# prefix 	Prefix used for resources that need unique names. 	string 	✓ 	
-# root_node 	Hierarchy node where projects will be created, 'organizations/org_id' or 'folders/folder_id'. 	string 	✓ 	
-# cluster_create 	Create GKE cluster and nodepool. 	bool 		true
-# ip_ranges 	Subnet IP CIDR ranges. 	map(string) 		{…}
-# ip_secondary_ranges 	Secondary IP CIDR ranges. 	map(string) 		{…}
-# owners_gce 	GCE project owners, in IAM format. 	list(string) 		[]
-# owners_gke 	GKE project owners, in IAM format. 	list(string) 		[]
-# owners_host 	Host project owners, in IAM format. 	list(string) 		[]
-# private_service_ranges 	Private service IP CIDR ranges. 	map(string) 		{…}
-# project_services 	Service APIs enabled by default in new projects. 	list(string) 		[…]
-# region 	Region used. 	string 		"europe-west1"
